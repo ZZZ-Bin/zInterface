@@ -7,11 +7,14 @@
       :ref='"group" + index'
       :style='"width:" + settings.colWidth + "px"'>
       <div class="waterfall-cell"
-        v-for='(cell, cellIndex) in groups[index]'
-        :key='cellIndex'>
-        <img :src="cell.url" alt="">
-        <p>{{ cell.id }}</p>
+        v-for='(cell, cellIndex) in groups[index]["images"]'
+        :key='cellIndex'
+        :style='{marginBottom: settings.margin + "px"}'>
+        <img :src="cell" alt="">
       </div>
+      <div class='over'
+      :style='{height: groups[index].isOver + "px", backgroundColor: settings.fill}'
+      v-if='groups[index].isOver'></div>
     </div>
   </div>
 </template>
@@ -25,7 +28,7 @@ export default {
       direction: String,
       colNum: Number,
       colWidth: Object,
-      completed: Boolean
+      fill: { default: false }
     },
     datas: {
       type: Array
@@ -35,30 +38,83 @@ export default {
     return {
       min: 0,
       images: this.datas,
-      groups: new Array(this.settings.colNum).fill([]),
+      groups: new Array(this.settings.colNum).fill({isOver: false, images: []}),
       groupsEl: []
     }
   },
-  mounted () {
-    for (let i in this.$refs) {
-      this.groupsEl.push(this.$refs[i])
+  methods: {
+    getGroupsEl () {
+      for (let i in this.$refs) {
+        this.groupsEl.push(this.$refs[i])
+      }
+    },
+    getMin () {
+      /* 视图更新后获取高度最小的 group，更新 this.min */
+      this.min = [...this.groupsEl].sort((a, b) => {
+        return a[0].offsetHeight - b[0].offsetHeight
+      })[0][0].classList[1].replace('group', '')
+    },
+    useable (image, length) {
+      /* 图片加载成功 */
+      const isOver = length === 0
+        ? this.groups[this.min].isOver : false
+      this.$set(this.groups,
+        this.min,
+        {isOver: isOver,
+          images: [
+            ...this.groups[this.min]['images'],
+            image.src ]})
+    },
+    unUesable () {
+      /* 图片加载失败 */
+      console.log('fail')
+    },
+    fill () {
+      /* 自动填充 */
+      const max = [...this.groupsEl].sort((a, b) => {
+        return b[0].offsetHeight - a[0].offsetHeight
+      })[0][0].classList[1].replace('group', '')
+      console.log(max)
+      this.groups = this.groups.map((item, index) => {
+        let height = this.groupsEl[max][0].offsetHeight -
+          this.groupsEl[index][0].offsetHeight - this.settings.margin
+        return Object.assign(item, {isOver: height})
+      })
     }
+  },
+  mounted () {
+    this.getGroupsEl()
   },
   watch: {
     images () {
-      if (this.images.length === 0) return
       this.$nextTick(() => {
-        this.$set(this.groups,
-          this.min,
-          [ ...this.groups[this.min], this.images.shift() ])
+        if (this.images.length === 0) return
+        const image = new Image()
+        image.src = this.images.shift()
+        new Promise((resolve, reject) => {
+          const length = this.images.length
+          image.onload = () => {
+            resolve([length, true])
+          }
+          image.onerror = () => {
+            resolve([length, false])
+          }
+        }).then(([length, canUse]) => {
+          if (canUse) this.useable(image, length)
+          else this.unUesable(image, length)
+          if (length === 0) {
+            this.$nextTick(() => {
+              this.fill()
+            })
+          }
+        }).catch(err => {
+          throw err
+        })
       })
     }
   },
   updated () {
-    this.groupsEl.sort((a, b) => {
-      return a[0].offsetHeight - b[0].offsetHeight
-    })
-    this.min = this.groupsEl[0][0].classList[1].replace('group', '')
+    this.getMin()
   }
 }
 </script>
@@ -82,6 +138,11 @@ export default {
 
 .waterfall-cell p {
   font-size: 12px;
+}
+
+.waterfall-group .over {
+  width: 100%;
+  background-color: red;
 }
 
 </style>
