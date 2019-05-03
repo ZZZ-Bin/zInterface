@@ -75,7 +75,6 @@ export default {
       let diff = now.filter((item, index) => {
         return !(index in before)
       })
-      if (diff.length === 0) debugger
       let preload = diff.map((item, index) => {
         let image = new Image()
         image.src = item
