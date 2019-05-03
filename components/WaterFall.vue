@@ -5,16 +5,16 @@
       :class='"group" + index'
       :key='index + 1'
       :ref='"group" + index'
-      :style='"width:" + settings.colWidth + "px"'>
+      :style='{width: settings.colWidth}'>
       <div class="waterfall-cell"
         v-for='(cell, cellIndex) in groups[index]["images"]'
         :key='cellIndex'
-        :style='{marginBottom: settings.margin + "px"}'>
+        :style='{marginBottom: settings.margin / groupsEl[index][0].offsetWidth * 100 + "%"}'>
         <img :src="cell" alt="">
       </div>
       <div class='over'
-      :style='{height: groups[index].isOver + "px", backgroundColor: settings.fill}'
-      v-if='groups[index].isOver && images.length === 0'></div>
+      :style='{height: 0, paddingTop: groups[index].filled + "%", backgroundColor: settings.fill}'
+      v-if='groups[index].filled && images.length === 0'></div>
     </div>
   </div>
 </template>
@@ -37,8 +37,8 @@ export default {
   data: function () {
     return {
       min: 0,
-      images: this.datas,
-      groups: new Array(this.settings.colNum).fill({isOver: false, images: []}),
+      images: [],
+      groups: new Array(this.settings.colNum).fill({filled: false, images: []}),
       groupsEl: []
     }
   },
@@ -54,29 +54,16 @@ export default {
         return a[0].offsetHeight - b[0].offsetHeight
       })[0][0].classList[1].replace('group', '')
     },
-    useable (image, length) {
-      /* 图片加载成功 */
-      this.$set(this.groups,
-        this.min,
-        {isOver: false,
-          images: [
-            ...this.groups[this.min]['images'],
-            image.src ]})
-    },
-    unUesable () {
-      /* 图片加载失败 */
-    },
     fill () {
       /* 自动填充 */
-      this.$nextTick(() => {
-        const max = [...this.groupsEl].sort((a, b) => {
-          return b[0].offsetHeight - a[0].offsetHeight
-        })[0][0].classList[1].replace('group', '')
-        this.groups = this.groups.map((item, index) => {
-          let height = this.groupsEl[max][0].offsetHeight -
-            this.groupsEl[index][0].offsetHeight - this.settings.margin
-          return Object.assign(item, {isOver: height})
-        })
+      const max = [...this.groupsEl].sort((a, b) => {
+        return b[0].offsetHeight - a[0].offsetHeight
+      })[0][0].classList[1].replace('group', '')
+      this.groups = this.groups.map((item, index) => {
+        let height = this.groupsEl[max][0].offsetHeight -
+          this.groupsEl[index][0].offsetHeight - this.settings.margin
+        height = height / this.groupsEl[index][0].offsetWidth * 100
+        return Object.assign(item, {filled: height})
       })
     }
   },
@@ -84,29 +71,39 @@ export default {
     this.getGroupsEl()
   },
   watch: {
-    images () {
-      this.$nextTick(() => {
-        if (this.images.length === 0) return
-        const image = new Image()
-        image.src = this.images[0]
-        new Promise((resolve, reject) => {
-          const length = this.images.length
-          image.onload = () => {
-            resolve([length, true])
-          }
-          image.onerror = () => {
-            resolve([length, false])
-          }
-        }).then(([length, canUse]) => {
-          this.images.shift()
-          if (canUse) this.useable(image, length)
-          else this.unUesable(image, length)
-          if (this.images.length === 0) {
-            this.fill()
-          }
-        }).catch(err => {
-          throw err
+    datas (now, before) {
+      let diff = now.filter((item, index) => {
+        return !(index in before)
+      })
+      if (diff.length === 0) debugger
+      let preload = diff.map((item, index) => {
+        let image = new Image()
+        image.src = item
+        return new Promise((resolve, reject) => {
+          image.onload = () => resolve()
+          image.onerror = () => resolve(index)
         })
+      })
+      Promise.all(preload).then(loaded => {
+        let useable = diff.filter((item, index) => {
+          return loaded.indexOf(index) === -1
+        })
+        if (useable.length === 0) return
+        this.images = useable
+      })
+    },
+    images (val, before) {
+      this.$nextTick(() => {
+        if (this.images.length === 0) {
+          if (this.settings.fill) this.fill()
+          return
+        }
+        this.$set(this.groups,
+          this.min,
+          {filled: false,
+            images: [
+              ...this.groups[this.min]['images'],
+              this.images.shift() ]})
       })
     }
   },
