@@ -9,26 +9,26 @@ vue 瀑布流组件：
   -urls：
     包含图片 <font color="red">url</font> 的数组。
 
-  	<table>
-  	  <tbody align="center">
-        <tr>
-          <th>type</th>
-          <th>default</th>
-          <th>required</th>
-        </tr>
-        <tr>
-          <td>Array</td>
-          <td>[]</td>
-          <td>false</td>
-        </tr>
-    </tbody>
-  	</table>
+​	  <table>
+​ 	  <tbody align="center">
+​       <tr>
+​         <th>type</th>
+​         <th>default</th>
+​         <th>required</th>
+​       </tr>
+​       <tr>
+​         <td>Array</td>
+​         <td>[]</td>
+​         <td>false</td>
+​       </tr>
+​   </tbody>
+​ 	</table>
 
 
   -setting: 
     组件相关设置。
 
-  <table>
+​  <table>
 ​		<tbody align="center" size="12px">
 ​			<tr>
 ​				<th>key</th>
