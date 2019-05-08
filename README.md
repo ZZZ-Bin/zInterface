@@ -1,5 +1,4 @@
 # zUi
 
-- [waterfall](./component/waterfall/README.md)
+- [waterfall](./tree/master/components/waterfall)
 - ​
-
