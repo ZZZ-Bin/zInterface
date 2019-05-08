@@ -5,7 +5,7 @@ Vue 瀑布流组件。组件接收两 `props`: [urls](#user-content---urls包含
 ## props
 
 #### \- urls：*包含图片 url 的数组。*
-​ <table>
+  <table>
 ​   <tbody align="center">
 ​     <tr>
 ​       <th>type</th>
@@ -22,7 +22,7 @@ Vue 瀑布流组件。组件接收两 `props`: [urls](#user-content---urls包含
 ​ </br>
 
 #### \- setting: *组件相关设置。*
-​ <table>
+  <table>
 ​   <tbody align="center" size="12px">
 ​     <tr>
 ​       <th>key</th>
