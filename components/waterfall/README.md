@@ -24,6 +24,7 @@ vue 瀑布流组件：
     </tbody>
   	</table>
 
+
   -setting: 
     组件相关设置。
 
