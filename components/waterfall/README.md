@@ -4,32 +4,29 @@ vue 瀑布流组件：
 
 
 
-### props
+## props
 
-  ​	-urls：
-  	   包含图片 <font color=red>url</font> 的数组。
+  \- urls：包含图片 <font color="red">url</font> 的数组。
+​	  <table>
+​ 	  <tbody align="center">
+​       <tr>
+​         <th>type</th>
+​         <th>default</th>
+​         <th>required</th>
+​       </tr>
+​       <tr>
+​         <td>Array</td>
+​         <td>[]</td>
+​         <td>false</td>
+​       </tr>
+​     </tbody>
+​ 	</table>
 
-  ​	<table>
-  	  <tbody align=center>
-        <tr>
-          <th>type</th>
-          <th>default</th>
-          <th>required</th>
-        </tr>
-        <tr>
-          <td>Array</td>
-          <td>[]</td>
-          <td>false</td>
-        </tr>
-    </tbody>
-  	</table>
+​   </br>
 
-​	-setting: 
-
-​	 组件相关设置。
-
-  <table>
-​		<tbody align=center>
+  \- setting: 组件相关设置。
+​  <table>
+​		<tbody align="center" size="12px">
 ​			<tr>
 ​				<th>key</th>
 ​				<th>type</th>
@@ -73,9 +70,13 @@ vue 瀑布流组件：
 ​				<td>false</td>
 ​			</tr>
 ​		</tbody>
+<<<<<<< HEAD
 
 
 ​	</table>
 
 
 
+=======
+​	</table>
+>>>>>>> c6863e44fe12aebb44c9a26586df0c8e8038df69
