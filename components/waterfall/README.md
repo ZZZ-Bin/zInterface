@@ -1,6 +1,6 @@
 # waterfall
 
-Vue 瀑布流组件。组件接收两 `props`: [urls]("#urls")、[setting]("#setting")，并预留了一些 [slots]("#slots") 以便添加一些自定义功能或对组件进行扩展。
+Vue 瀑布流组件。组件接收两 `props`: [urls](#user-content---urls包含图片-url-的数组)、[setting](#user-content---setting-组件相关设置)，并预留了一些 [slots](#slots) 以便添加一些自定义功能或对组件进行扩展。
 
 ## props
 
