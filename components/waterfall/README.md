@@ -4,46 +4,47 @@ vue 瀑布流组件：
 
 ## props
 
-**\- urls：*包含图片 <font color="##e96900">url</font> 的数组。***
-​	  <table>
-​ 	  <tbody align="center">
-​       <tr>
-​         <th>type</th>
-​         <th>default</th>
-​         <th>required</th>
-​       </tr>
-​       <tr>
-​         <td>Array</td>
-​         <td>[]</td>
-​         <td>false</td>
-​       </tr>
-​     </tbody>
-​ 	</table>
-​   </br>
+**\- urls：*包含图片 url 的数组。***
+​ <table>
+​   <tbody align="center">
+​     <tr>
+​       <th>type</th>
+​       <th>default</th>
+​       <th>required</th>
+​     </tr>
+​     <tr>
+​       <td>Array</td>
+​       <td>[]</td>
+​       <td>false</td>
+​     </tr>
+​   </tbody>
+​ </table>
+​ </br>
+
 **\- setting: *组件相关设置。***
-​  <table>
-​		<tbody align="center" size="12px">
-​			<tr>
-​				<th>key</th>
-​				<th>type</th>
-​				<th>default</th>
-​				<th>required</th>
-​			</tr>
-​			<tr>
-​				<td>colNum</td>
-​				<td>Number</td>
-​				<td>-</td>
-​				<td>true</td>
-​			</tr>
-​			<tr>
-​				<td>colWidth</td>
-​				<td>String</td>
-​				<td>-</td>
-​				<td>true</td>
-​			</tr>
-​			<tr>
-​				<td>margin</td>
-​				<td>String</td>
+​ <table>
+​   <tbody align="center" size="12px">
+​     <tr>
+​       <th>key</th>
+​       <th>type</th>
+​       <th>default</th>
+​       <th>required</th>
+​     </tr>
+​     <tr>
+​       <td>colNum</td>
+​       <td>Number</td>
+​       <td>-</td>
+​       <td>true</td>
+​     </tr>
+​     <tr>
+​       <td>colWidth</td>
+​       <td>String</td>
+​       <td>-</td>
+​       <td>true</td>
+​     </tr>
+​     <tr>
+​       <td>margin</td>
+​       <td>String</td>
 ​				<td>""</td>
 ​				<td>false</td>
 ​			</tr>
