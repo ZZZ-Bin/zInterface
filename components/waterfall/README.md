@@ -1,6 +1,6 @@
 # waterfall
 
-vue 瀑布流组件：
+Vue 瀑布流组件。
 
 ## props
 
