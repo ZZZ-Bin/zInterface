@@ -2,11 +2,10 @@
 
 vue 瀑布流组件：
 
-
-
 ## props
 
 **\- urls：*包含图片 <font color="##e96900">url</font> 的数组。***
+
 ​	  <table>
 ​ 	  <tbody align="center">
 ​       <tr>
@@ -22,6 +21,7 @@ vue 瀑布流组件：
 ​     </tbody>
 ​ 	</table>
 **\- setting: *组件相关设置。***
+
 ​  <table>
 ​		<tbody align="center" size="12px">
 ​			<tr>
