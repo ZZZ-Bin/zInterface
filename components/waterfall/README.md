@@ -1,10 +1,10 @@
 # waterfall
 
-Vue 瀑布流组件。
+Vue 瀑布流组件。组件接收两 `props`: [urls]("#urls")、[setting]("#setting")，并预留了一些 [slots]("#slots") 以便添加一些自定义功能或对组件进行扩展。
 
 ## props
 
-**\- urls：*包含图片 url 的数组。***
+#### \- urls：*包含图片 url 的数组。*
 ​ <table>
 ​   <tbody align="center">
 ​     <tr>
@@ -21,7 +21,7 @@ Vue 瀑布流组件。
 ​ </table>
 ​ </br>
 
-**\- setting: *组件相关设置。***
+#### \- setting: *组件相关设置。*
 ​ <table>
 ​   <tbody align="center" size="12px">
 ​     <tr>
@@ -75,4 +75,14 @@ Vue 瀑布流组件。
 - fill：自动补全，接收 `rgb 颜色值`和`十六进制颜色码`，默认值 `""` 不开启补全。
 - failImg：加载失败替换图片，默认值 `""` 加载失败的图片不会被添加到列中。
 - loadingImg：加载中图片。
+
+## slots
+
+组件在不同位置预留了三个插槽，以便在使用时根据需求对组件进行扩展。
+
+**\- cell**
+
+**\- group**
+
+**\- whole**
 
