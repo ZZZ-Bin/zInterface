@@ -28,98 +28,49 @@ vue 瀑布流组件：
 
 ​	 组件相关设置。
 
-  	 <table>
-
+  <table>
 ​		<tbody>
-
 ​			<tr>
-
 ​				<th>key</th>
-
 ​				<th>type</th>
-
 ​				<th>default</th>
-
 ​				<th>required</th>
-
 ​			</tr>
-
 ​			<tr>
-
 ​				<td>colNum</td>
-
 ​				<td>Number</td>
-
 ​				<td>-</td>
-
 ​				<td>true</td>
-
 ​			</tr>
-
 ​			<tr>
-
 ​				<td>colWidth</td>
-
 ​				<td>String</td>
-
 ​				<td>-</td>
-
 ​				<td>true</td>
-
 ​			</tr>
-
 ​			<tr>
-
 ​				<td>margin</td>
-
 ​				<td>String</td>
-
 ​				<td>""</td>
-
 ​				<td>false</td>
-
 ​			</tr>
-
 ​			<tr>
-
 ​				<td>fill</td>
-
 ​				<td>String</td>
-
 ​				<td>""</td>
-
 ​				<td>false</td>
-
 ​			</tr>
-
 ​			<tr>
-
 ​				<td>failImg</td>
-
 ​				<td>String</td>
-
 ​				<td>""</td>
-
 ​				<td>false</td>
-
 ​			</tr>
-
 ​			<tr>
-
 ​				<td>loadingImg</td>
-
 ​				<td>String</td>
-
 ​				<td>""</td>
-
 ​				<td>false</td>
-
 ​			</tr>
-
-​	
-
 ​		</tbody>
-
-​		
-
 ​	</table>
