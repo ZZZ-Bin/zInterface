@@ -8,7 +8,6 @@ vue 瀑布流组件：
 
   -urls：
     包含图片 <font color="red">url</font> 的数组。
-
 ​	  <table>
 ​ 	  <tbody align="center">
 ​       <tr>
@@ -21,13 +20,13 @@ vue 瀑布流组件：
 ​         <td>[]</td>
 ​         <td>false</td>
 ​       </tr>
-​   </tbody>
+​     </tbody>
 ​ 	</table>
 
+​   </br>
 
   -setting: 
     组件相关设置。
-
 ​  <table>
 ​		<tbody align="center" size="12px">
 ​			<tr>
