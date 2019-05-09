@@ -1,4 +1,4 @@
-# waterfall
+# waterfall ![瘦小的圆角矩形](https://img.shields.io/badge/Vue-v2.6.0+-brightgreen.svg)
 
 Vue 瀑布流组件。组件接收两 props: [urls](#user-content---urls包含图片-url-的数组)、[setting](#user-content---setting-组件相关设置)，并预留了一些 [slots](#slots) 以便添加一些[自定义功能](#user-content---示例)或对组件进行扩展。
 
