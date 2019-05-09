@@ -1,10 +1,10 @@
 # waterfall
 
-Vue 瀑布流组件。组件接收两 props: [urls](#user-content---urls包含图片-url-的数组)、[setting](#user-content---setting-组件相关设置)，并预留了一些 [slots](#slots) 以便添加一些自定义功能或对组件进行扩展。
+Vue 瀑布流组件。组件接收两 props: [urls](#user-content---urls包含图片-url-的数组)、[setting](#user-content---setting-组件相关设置)，并预留了一些 [slots](#slots) 以便添加一些[自定义功能](#user-content---示例)或对组件进行扩展。
 
 ## props
 
-#### \- urls：*包含图片 url 的数组。*
+#### \- urls：*包含图片 `url` 的数组。*
   <table>
 ​   <tbody align="center">
 ​     <tr>
@@ -82,8 +82,73 @@ Vue 瀑布流组件。组件接收两 props: [urls](#user-content---urls包含�
 组件在不同位置预留了三个插槽，以便在使用时根据需求对组件进行扩展。
 
 **\- cell**
+图片单元插槽，图片路径被保存在 `"url"` 中。
 
 **\- group**
+列插槽
 
 **\- whole**
+整体插槽
 
+
+## 示例
+
+通过组件预留的插槽，在使用过程中可对组件进行内容和功能上的扩展，以下展示部分功能的添加，你可以根据需要自行扩展组件。
+
+#### 添加蒙版、点击放大图片
+##### template：
+```
+  ...
+  <Waterfall :urls='datas' :setting='setting'>
+    <template #cell='data'>
+        <div class='mask'
+             @click='enlarge(data.url)'>
+          <p>点击放大图片</p>
+        </div>
+      </template>
+  <Waterfall>
+  <div class='magnifier'
+       v-if='magnifierImage'
+       @click='enlarge'>
+    <img :src='magnifierImage'
+         alt="">
+  </div>
+  ...
+```
+
+##### script:
+```
+  ...
+  data: function () {
+    return {
+      ...,
+      magnifierImage: ''
+    }
+  },
+  methods: {
+    ...,
+    enlarge (url) {
+      if (this.magnifierImage === '') this.magnifierImage = url
+      else this.magnifierImage = ''
+    }
+  }
+```
+
+##### style：
+```
+  .mask {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    opacity: 0;
+    transition: all 0.25s;
+  }
+  .mask:hover {
+    opacity: 1;
+  }
+```
