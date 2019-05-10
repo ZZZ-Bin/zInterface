@@ -36,7 +36,7 @@
 
 <script>
 export default {
-  name: 'WaterFall',
+  name: 'Waterfall',
   props: {
     setting: {
       type: Object,
@@ -119,6 +119,10 @@ export default {
         height = height / this.groupsEl[index][0].offsetWidth * 100
         return Object.assign(item, { filled: height })
       })
+    },
+    loadState () {
+      /* 加载状态 */
+      this.$emit('loadstate', this.loading)
     }
   },
   mounted () {
@@ -156,6 +160,9 @@ export default {
         }
         this.$set(this.groups, this.min, newValue)
       })
+    },
+    loading () {
+      this.loadState()
     }
   },
   updated () {
