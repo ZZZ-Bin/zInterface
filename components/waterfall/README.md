@@ -1,4 +1,4 @@
-# waterfall (https://img.shields.io/badge/Vue-v2.6.0+-brightgreen.svg)
+# waterfall ![](https://img.shields.io/badge/Vue-v2.6.0+-brightgreen.svg)
 
 Vue 瀑布流组件。组件接收两 props: [urls](#user-content---urls包含图片-url-的数组)、[setting](#user-content---setting-组件相关设置)，并预留了一些 [slots](#slots) 以便添加一些[自定义功能](#user-content---示例)或对组件进行扩展。
 
@@ -89,6 +89,23 @@ Vue 瀑布流组件。组件接收两 props: [urls](#user-content---urls包含�
 
 **\- whole**
 整体插槽
+
+​</br>
+## loading 状态的监听
+
+如需要，可在组件上监听 `loadstate`:
+```
+<Waterfall @loadstate='changeState'></Waterfall>
+```
+```
+methods: {
+  ...,
+  changeState (loading) {
+    ...
+  }
+}
+```
+该参数为一个 `boolean` 值，`true` 时图片加载中，`false` 时图片加载完成。
 
 ​</br>
 ## 示例
