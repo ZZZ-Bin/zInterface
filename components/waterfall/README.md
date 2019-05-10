@@ -1,4 +1,4 @@
-# waterfall ![瘦小的圆角矩形](https://img.shields.io/badge/Vue-v2.6.0+-brightgreen.svg)
+# waterfall (https://img.shields.io/badge/Vue-v2.6.0+-brightgreen.svg)
 
 Vue 瀑布流组件。组件接收两 props: [urls](#user-content---urls包含图片-url-的数组)、[setting](#user-content---setting-组件相关设置)，并预留了一些 [slots](#slots) 以便添加一些[自定义功能](#user-content---示例)或对组件进行扩展。
 
@@ -67,18 +67,7 @@ Vue 瀑布流组件。组件接收两 props: [urls](#user-content---urls包含�
 ​				<td>false</td>
 ​			</tr>
 ​		</tbody>
-<<<<<<< HEAD
-
-
 ​	</table>
-
-
-
-=======
-​	</table>
-<<<<<<< HEAD
->>>>>>> c6863e44fe12aebb44c9a26586df0c8e8038df69
-=======
 
 - colNum：图片列数。
 - colWidth：列宽度，接收带单位尺寸字符串，(`“10px”`、`"20%"`)。
@@ -163,4 +152,3 @@ Vue 瀑布流组件。组件接收两 props: [urls](#user-content---urls包含�
     opacity: 1;
   }
 ```
->>>>>>> c6f5fe7e50492c99b2f7470b24164c473da96621
