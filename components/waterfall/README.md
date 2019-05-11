@@ -95,7 +95,7 @@ Vue 瀑布流组件。组件接收两 props: [urls](#user-content---urls包含�
 
 如需要，可在组件上监听 `loadstate`:
 ```
-<Waterfall @loadstate='changeState'></Waterfall>
+<Waterfall @load-state='changeState'></Waterfall>
 ```
 ```
 methods: {
