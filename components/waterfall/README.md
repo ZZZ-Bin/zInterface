@@ -93,7 +93,7 @@ Vue 瀑布流组件。组件接收两 props: [urls](#user-content---urls包含�
 ​</br>
 ## loading 状态的监听
 
-如需要，可在组件上监听 `loadstate`:
+如需要，可在组件上监听 `load-state`:
 ```
 <Waterfall @load-state='changeState'></Waterfall>
 ```
