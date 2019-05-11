@@ -122,7 +122,7 @@ export default {
     },
     loadState () {
       /* 加载状态 */
-      this.$emit('loadstate', this.loading)
+      this.$emit('load-state', this.loading)
     }
   },
   mounted () {
