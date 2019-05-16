@@ -47,3 +47,7 @@ Vue 页码组件。
 
 ​ </br>
 
+## theme
+blunt:
+![blunt]{https://raw.githubusercontent.com/ZZZ-Bin/img-folder/master/zInterface/blunt.png?token=AICBY3ZXFO4RJKBXINOLVBS43UURO}
+
