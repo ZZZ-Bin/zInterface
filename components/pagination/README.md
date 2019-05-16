@@ -62,7 +62,7 @@ Vue 页码组件。
 
 如需要，可在组件上监听 `current-page`:
 ```
-      <Pagination @current-page='changePage' :setting='setting'></Pagination>
+<Pagination @current-page='changePage' :setting='setting'></Pagination>
 
 ```
 ```
