@@ -56,3 +56,23 @@ Vue 页码组件。
 
 #### texture-dark
 ![texture-dark](https://raw.githubusercontent.com/ZZZ-Bin/img-folder/master/zInterface/texture-dark.png?token=AICBY35IWKAGP3OJ5OOTM7C43UVRU)
+
+​ </br>
+## page 监听
+
+如需要，可在组件上监听 `current-page`:
+```
+      <Pagination @current-page='changePage' :setting='setting'></Pagination>
+
+```
+```
+methods: {
+  ...,
+  changePage (page) {
+    ...
+  }
+}
+```
+该参数为一个 `number` 值，表示组件当前的页码。
+
+​</br>
