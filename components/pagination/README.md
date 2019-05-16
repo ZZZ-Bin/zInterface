@@ -49,7 +49,7 @@ Vue 页码组件。
 
 ## theme
 #### blunt:
-![blunt](https://raw.githubusercontent.com/ZZZ-Bin/img-folder/master/zInterface/blunt.png?token=AICBY3ZXFO4RJKBXINOLVBS43UURO)
+![blunt](https://raw.githubusercontent.com/ZZZ-Bin/img-folder/master/zInterface/blunt.png?token=AICBY33MUDSTB7VHLGGTQMK43UVVW)
 
 #### bubble-ching:
 ![bubble-ching](https://raw.githubusercontent.com/ZZZ-Bin/img-folder/master/zInterface/bubble-ching.png?token=AICBY37D7QDGCCJYGASSN7K43UVPC)
