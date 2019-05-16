@@ -48,6 +48,11 @@ Vue 页码组件。
 ​ </br>
 
 ## theme
-blunt:
-![blunt]{https://raw.githubusercontent.com/ZZZ-Bin/img-folder/master/zInterface/blunt.png?token=AICBY3ZXFO4RJKBXINOLVBS43UURO}
+#### blunt:
+![blunt](https://raw.githubusercontent.com/ZZZ-Bin/img-folder/master/zInterface/blunt.png?token=AICBY3ZXFO4RJKBXINOLVBS43UURO)
 
+#### bubble-ching:
+![bubble-ching](https://raw.githubusercontent.com/ZZZ-Bin/img-folder/master/zInterface/bubble-ching.png?token=AICBY37D7QDGCCJYGASSN7K43UVPC)
+
+#### texture-dark
+![texture-dark](https://raw.githubusercontent.com/ZZZ-Bin/img-folder/master/zInterface/texture-dark.png?token=AICBY35IWKAGP3OJ5OOTM7C43UVRU)
