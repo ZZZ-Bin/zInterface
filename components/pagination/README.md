@@ -49,13 +49,13 @@ Vue 页码组件。
 
 ## theme
 #### blunt:
-![blunt](https://raw.githubusercontent.com/ZZZ-Bin/img-folder/master/zInterface/blunt.png?token=AICBY33MUDSTB7VHLGGTQMK43UVVW)
+![blunt](https://raw.githubusercontent.com/ZZZ-Bin/img-folder/master/zInterface/blunt.png)
 
 #### bubble-ching:
-![bubble-ching](https://raw.githubusercontent.com/ZZZ-Bin/img-folder/master/zInterface/bubble-ching.png?token=AICBY37D7QDGCCJYGASSN7K43UVPC)
+![bubble-ching](https://raw.githubusercontent.com/ZZZ-Bin/img-folder/master/zInterface/bubble-ching.png)
 
 #### texture-dark
-![texture-dark](https://raw.githubusercontent.com/ZZZ-Bin/img-folder/master/zInterface/texture-dark.png?token=AICBY35IWKAGP3OJ5OOTM7C43UVRU)
+![texture-dark](https://raw.githubusercontent.com/ZZZ-Bin/img-folder/master/zInterface/texture-dark.png)
 
 ​ </br>
 ## page 监听
