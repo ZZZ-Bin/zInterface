@@ -3,8 +3,6 @@
 ### start
 #### install
 ```$ npm install zinterface```
-#### import
-```import Waterfall from 'zinterface/components/waterfall'```
 
 
 
