@@ -1,29 +1,8 @@
-/* texture-dark */
+/* bubble-ching */
 .bubble-ching .pagination-item {
   border-radius: 50%;
   color: #50b7a7;
-  font-size: 0;
-  cursor: pointer;
-  user-select: none;
-  box-sizing: border-box;
   border: 2px solid #50b7a7;
-  position: relative;
-}
-
-.bubble-ching .pagination-item::before {
-  content: '';
-  display: inline-block;
-  padding: 100% 0 0 0;
-}
-
-.bubble-ching .pagination-item p {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin: 0;
-  padding: 0;
-  font-size: initial;
 }
 
 .bubble-ching .pagination-item:hover {
@@ -36,25 +15,8 @@
 }
 
 .bubble-ching .ctrl-btn::after {
-  content: '';
-  display: inline-block;
-  width: 20%;
-  height: 20%;
   border-top: 2px solid #fff;
-  border-right: 2px solid transparent;
-  border-bottom: 2px solid transparent;
   border-left: 2px solid #fff;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-}
-
-.bubble-ching .prev::after {
-  transform: translate(calc(100% * 1.414 / 4 - 50%), -50%) rotate(-45deg);
-}
-
-.bubble-ching .next::after {
-  transform: translate(calc(-100% * 1.414 / 4 - 50%), -50%) rotate(135deg);
 }
 
 .bubble-ching .current {

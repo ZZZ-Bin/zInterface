@@ -25,6 +25,12 @@ Vue 页码组件。
 ​       <td>-</td>
 ​       <td>true</td>
 ​     </tr>
+     <tr>
+​       <td>current</td>
+​       <td>Number</td>
+​       <td>-</td>
+​       <td>true</td>
+​     </tr>
 ​     <tr>
 ​       <td>boundary</td>
 ​       <td>Boolean</td>
@@ -42,6 +48,7 @@ Vue 页码组件。
 
 - length：显示的页码个数。
 - last：页码总长度（尾页数）。
+- current：当前页。
 - boundary：是否显示 首/尾 页。
 - theme：主题样式。
 
