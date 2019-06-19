@@ -118,11 +118,11 @@ methods: {
   ...
   <Waterfall :urls='datas' :setting='setting'>
     <template #cell='data'>
-        <div class='mask'
-             @click='enlarge(data.url)'>
-          <p>点击放大图片</p>
-        </div>
-      </template>
+      <div class='mask'
+           @click='enlarge(data.url)'>
+        <p>点击放大图片</p>
+      </div>
+    </template>
   <Waterfall>
   <div class='magnifier'
        v-if='magnifierImage'
