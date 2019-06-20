@@ -76,10 +76,11 @@ Vue 页码组件。
 methods: {
   ...,
   changePage (page) {
+    this.setting = Object.assign(this.setting, { current: page })
     ...
   }
 }
 ```
-该参数为一个 `number` 值，表示组件当前的页码。
+该参数为一个 `number` 值，表示触发点击的页码。
 
 ​</br>
