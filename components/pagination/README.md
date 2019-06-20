@@ -67,7 +67,7 @@ Vue 页码组件。
 ​ </br>
 ## page 监听
 
-如需要，可在组件上监听 `current-page`:
+如要改变组件页码，需在组件上监听 `current-page`:
 ```
 <Pagination @current-page='changePage' :setting='setting'></Pagination>
 
