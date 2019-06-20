@@ -1,6 +1,6 @@
 {
   "name": "zinterface",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A UI depository for Vue",
   "main": "index.js",
   "dependencies": {
