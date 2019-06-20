@@ -1,5 +1,5 @@
 <template>
-  <div id='pagination' :class='setting.theme'>
+  <div v-if='setting.last > 1' id='pagination' :class='setting.theme'>
     <div class='pagination-item ctrl-btn prev'
         :style='ctrlWidth'
         @click='changePage("prev")'></div>
@@ -13,7 +13,7 @@
           </div>
 
     <div class='pagination-item'
-          v-for='(item, index) in new Array(setting.length)'
+          v-for='(item, index) in new Array(setting.length > setting.last ? setting.last :  setting.length)'
           :style='itemWidth'
           :key='index'
           :class='firstNum + index === setting.current && "current"'
@@ -48,7 +48,6 @@ export default {
           typeof value.current === 'number' &&
           ['boolean', 'undefined'].indexOf(typeof value.boundary) !== -1 &&
           ['string', 'undefined'].indexOf(typeof value.theme) !== -1 &&
-          value.length <= value.last &&
           value.current <= value.last
         )
       }
