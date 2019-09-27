@@ -1,5 +1,5 @@
 <template>
-  <div id='waterfall'>
+  <div class='waterfall'>
     <div class='waterfall-group'
          v-for='( group, index ) in groups'
          :class='"group" + index'
@@ -172,7 +172,7 @@ export default {
 </script>
 
 <style scoped>
-#waterfall {
+.waterfall {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;

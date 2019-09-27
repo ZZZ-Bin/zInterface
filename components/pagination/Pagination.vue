@@ -1,5 +1,5 @@
 <template>
-  <div v-if='setting.last > 1' id='pagination' :class='setting.theme'>
+  <div v-if='setting.last > 1' class='pagination' :class='setting.theme'>
     <div class='pagination-item ctrl-btn prev'
         :style='ctrlWidth'
         @click='changePage("prev")'></div>
@@ -109,7 +109,7 @@ export default {
 @import './style/bubble-ching.css';
 @import './style/blunt.css';
 
-#pagination {
+.pagination {
   display: flex;
   justify-content: space-between;
 }
